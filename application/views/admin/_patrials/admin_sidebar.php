@@ -109,7 +109,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Jadwal
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -117,7 +117,7 @@
               <li class="nav-item">
                 <a href="pages/tables/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Input Jadwal</p>
                 </a>
               </li>
               <li class="nav-item">
