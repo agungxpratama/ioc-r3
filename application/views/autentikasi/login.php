@@ -6,7 +6,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>SI</b>EMPRE</a>
+    <a href="<?php echo site_url(); ?>"><b>SI</b>EMPRE</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -41,7 +41,11 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
+<<<<<<< HEAD
             <button type="submit" class="btn btn-primary btn-block">Login</button>
+=======
+            <button type="submit" class="btn btn-primary btn-block"><a href="<?php echo site_url('index.php/home/') ?>">Link</a></button>
+>>>>>>> refs/remotes/origin/master
           </div>
           <!-- /.col -->
         </div>

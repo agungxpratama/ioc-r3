@@ -26,4 +26,8 @@ class Jadwal extends CI_Controller {
     public function lihat_jadwal(){
         $this->load->view('jadwal/daftar_jadwal');
     }
+
+	public function input_jadwal(){
+        $this->load->view('jadwal/input_jadwal');
+    }
 }
