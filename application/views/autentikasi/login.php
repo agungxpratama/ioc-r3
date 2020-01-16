@@ -42,6 +42,7 @@
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <button type="submit" class="btn btn-primary btn-block"><a href="<?php echo site_url('index.php/home/') ?>">Link</a></button>
           </div>
           <!-- /.col -->
         </div>

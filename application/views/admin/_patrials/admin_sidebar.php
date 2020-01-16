@@ -76,6 +76,7 @@
               </li>
             </ul>
           </li>
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
@@ -105,6 +106,37 @@
               </li>
             </ul>
           </li>
+          <!-- inputan menu -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Tim
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url('index.php/admin/admin_input_presensi/') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Tim</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('index.php/admin/admin_lihat_kehadiran/') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lihat Daftar Tim</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/editors.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jadwal Kerja Tim</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- tambah -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
