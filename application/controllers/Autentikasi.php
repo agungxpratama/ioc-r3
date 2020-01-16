@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Autentikasi extends CI_Controller {
+class autentikasi extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -32,7 +32,7 @@ class Autentikasi extends CI_Controller {
 		$password=$this->input->post('password');
 
 		$where_akun=array('username'=> $username,'password'=>$password);
-		$data_akun=$this->pegawai_model->view_where('akun',$where_akun)->result_array();
+		$data_akun=$this->pegawai_model->autentikasi($username,$password)->result_array();
 		//echo $data_akun['username'];
 		print_r($where_akun);
 		echo "<br>";
@@ -41,10 +41,25 @@ class Autentikasi extends CI_Controller {
 		echo $data_akun["0"]["username"];
 		if ($data_akun["0"]["username"] == $username && $data_akun["0"]["password"]==$password) {
 			echo "True";
+			
+			//$where_pegawai=array('username'=> $username,'password'=>$password);
+			//$data_akun=$this->pegawai_model->view_where('akun',$where_akun)->result_array();
 
-			$data=array('id_pegawai'=>$data_akun["0"]['id_pegawai'],'isLogin'=>true);
+
+			$data=array(
+				'id_pegawai'=>$data_akun["0"]['id_pegawai'],
+				'nama_pegawai'=>$data_akun["0"]['nama_pegawai'],
+				'id_tim'=>$data_akun["0"]['id_tim'],
+				'status_anggota'=>$data_akun["0"]['status_anggota']
+			);
 			$this->session->set_userdata($data);
-			//$this->session->set_userdata('isLogin',true);
+			print_r($this->session->userdata());
+			$this->session->set_userdata('isLogin',true);
+			//$this->session->session_destroy();
+			//redirect(base_url('index.php/home'));
+		}else{
+			$this->session->set_flashdata('alert','Username atau Password yang anda masukkan salah!');
+			print "<script type='text/javascript'> alert('Hello! I am an alert box!');</script>";
 			redirect(base_url('index.php/'));
 		}
 	}
