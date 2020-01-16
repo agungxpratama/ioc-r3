@@ -109,19 +109,23 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form role="form" action="<?=base_url()?>index.php/jadwal/simpan_jadwal" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Pegawai</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Anda">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Anda" name="id_pegawai">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Tim</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Tim Anda">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Tim Anda" name="id_tim">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Waktu</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Password" name="tanggal">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Tipe Jadwal</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Tim Anda" name="tipe_jadwal">
                   </div>
                   <!-- Untuk penginputan file exel yang tertera -->
                   <div class="form-group">

@@ -18,6 +18,12 @@ class Jadwal extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	function __construct(){
+        parent::__construct();
+        $this->load->model('pegawai_model');
+    }
+
 	public function index()
 	{
 		$this->load->view('jadwal/dashboard');
@@ -29,5 +35,24 @@ class Jadwal extends CI_Controller {
 
 	public function input_jadwal(){
         $this->load->view('jadwal/input_jadwal');
+    }
+
+    public function simpan_jadwal()
+    {
+    	$id_pegawai = $this->input->post('id_pegawai');
+    	$id_tim = $this->input->post('id_tim');
+    	$tanggal = $this->input->post('tanggal');
+    	$tipe_jadwal = $this->input->post('tipe_jadwal');
+
+    	$data = array(
+    		'id_jadwal' => '',
+    		'id_pegawai' => $id_pegawai,
+    		'id_tim' => $id_tim,
+    		'tanggal' => $tanggal,
+    		'tipe_jadwal' => $tipe_jadwal
+    	);
+    	
+    	$this->pegawai_model->insert($data, 'jadwal');
+    	redirect('index.php/tim/index');
     }
 }
