@@ -12,7 +12,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Login untuk masuk ke Aplikasi.</p>
-
+      <font style="font-size: 10pt;color: red;"><?=$this->session->flashdata('alert');?></font>
       <form action="<?=base_url()?>index.php/autentikasi/cek_autentikasi" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Username" name="username">
@@ -41,11 +41,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-<<<<<<< HEAD
             <button type="submit" class="btn btn-primary btn-block">Login</button>
-=======
-            <button type="submit" class="btn btn-primary btn-block"><a href="<?php echo site_url('index.php/home/') ?>">Link</a></button>
->>>>>>> refs/remotes/origin/master
           </div>
           <!-- /.col -->
         </div>
