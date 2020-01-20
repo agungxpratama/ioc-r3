@@ -56,11 +56,18 @@ class autentikasi extends CI_Controller {
 			print_r($this->session->userdata());
 			$this->session->set_userdata('isLogin',true);
 			//$this->session->session_destroy();
-			//redirect(base_url('index.php/home'));
+			redirect(base_url('index.php/home'));
 		}else{
 			$this->session->set_flashdata('alert','Username atau Password yang anda masukkan salah!');
 			print "<script type='text/javascript'> alert('Hello! I am an alert box!');</script>";
 			redirect(base_url('index.php/'));
 		}
+	}
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		print_r($this->session->userdata());
+		echo $this->session->userdata('nama_pegawai');
+		redirect(base_url('index.php'));
 	}
 }
