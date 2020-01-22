@@ -39,65 +39,22 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
+          
+          <table class="table">
+            <tr>
+              <th>Tanggal</th>
+              <th>Masuk</th>
+              <th>Update</th>
+              <th>Pulang</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
 
-                <p>New Orders</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>Bounce Rate</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
           <!-- ./col -->
         </div>
         <!-- /.row -->
@@ -111,21 +68,24 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form role="form" enctype="multipart/form-data" method="post"
+              action="<?=base_url('index.php/presensi/jam_masuk')?>">
+              <?php date_default_timezone_set('Asia/Jakarta'); ?>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal</label>
-                    <input type="text" class="form-control" value="<?php echo date('d-m-Y'); ?>" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" value="<?php echo date('Y-m-d'); ?>" id="exampleInputEmail1" placeholder="Enter email" name="tanggal">
                   </div>
+                  
                   <div class="form-group">
                     <label for="exampleInputPassword1">Waktu</label>
-                    <input type="text" class="form-control" value="<?php echo date('H:i:s'); ?>" id="exampleInputPassword1" >
+                    <input type="text" class="form-control" value="<?php echo date('H:i:s'); ?>" id="exampleInputPassword1" name="jam_masuk">
                   </div>
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" class="custom-file-input" id="exampleInputFile"> 
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                       <div class="input-group-append">
@@ -136,12 +96,12 @@
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
+                  </div>-->
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Masuk</button>
                 </div>
               </form>
             </div>

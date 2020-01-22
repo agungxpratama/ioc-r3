@@ -15,7 +15,8 @@
           <img src="<?php echo base_url('dist/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?=$this->session->userdata('nama_pegawai');?></a>
+          <a href="<?=base_url()?>index.php/autentikasi/logout" class="d-block">Log Out</a>
         </div>
       </div>
 
@@ -107,6 +108,9 @@
             </ul>
           </li>
           <!-- inputan menu -->
+          <?php  
+          if($this->session->userdata('id_tim') > 0 && $this->session->userdata('status_anggota')=='Ketua Tim'){
+          ?>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
@@ -136,6 +140,7 @@
               </li>
             </ul>
           </li>
+        <?php }?>
           <!-- tambah -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
