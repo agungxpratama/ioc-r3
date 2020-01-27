@@ -55,4 +55,9 @@ class Jadwal extends CI_Controller {
     	$this->pegawai_model->insert($data, 'jadwal');
     	redirect('index.php/tim/index');
     }
+
+    public function daftar_jadwal()
+    {
+        $this->load->view('jadwal/daftar_jadwal');
+    }
 }
