@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 class Jadwal extends CI_Controller {
 
 	/**
@@ -59,5 +62,24 @@ class Jadwal extends CI_Controller {
     public function daftar_jadwal()
     {
         $this->load->view('jadwal/daftar_jadwal');
+    }
+
+    public function form_jadwal()
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'No.');
+        $sheet->setCellValue('B1', 'Nama');
+        $sheet->setCellValue('C1', 'Keterangan');
+        
+        $writer = new Xlsx($spreadsheet);
+        
+        $filename = 'form_jadwal_presensi';
+        
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
     }
 }
