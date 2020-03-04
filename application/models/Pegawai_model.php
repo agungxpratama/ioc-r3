@@ -29,9 +29,17 @@ class Pegawai_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('akun');
 		$this->db->join('pegawai', 'akun.id_pegawai = pegawai.id_pegawai');
-		$this->db->join('anggota_tim', 'pegawai.id_pegawai = anggota_tim.id_pegawai');
+		//$this->db->join('anggota_tim', 'pegawai.id_pegawai = anggota_tim.id_pegawai');
 		$this->db->where('akun.username =', $username);
 		$this->db->where('akun.password =', $password);
+		$query = $this->db->get();
+		return $query;
+	}
+	public function autentikasi_tim($id_pegawai)
+	{
+		$this->db->select('id_pegawai,status_anggota');
+		$this->db->from('anggota_tim');
+		$this->db->where('id_pegawai =', $id_pegawai);
 		$query = $this->db->get();
 		return $query;
 	}
