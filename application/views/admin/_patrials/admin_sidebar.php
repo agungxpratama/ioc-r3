@@ -1,10 +1,10 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="<?=base_url()?>index.php/home" class="brand-link">
       <img src="<?php echo base_url('dist/img/AdminSiempre.png')?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">SIEMPRE</span>
+      <span class="brand-text font-weight-light">IOC-R3</span>
     </a>
 
     <!-- Sidebar -->
@@ -164,14 +164,44 @@
                   </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
+                <a href="<?php echo site_url('index.php/jadwal/daftar_jadwal'); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Jadwal</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
+          <!-- section add -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder"></i>
+              <p>
+                Contoh
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo site_url('index.php/jadwal/'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>COntoh 1</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                  <a href="<?php echo site_url('index.php/jadwal/input_jadwal'); ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Contoh 2</p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo site_url('index.php/jadwal/daftar_jadwal'); ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contoh 3</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -359,7 +389,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           </ul>
       </nav>
       <!-- /.sidebar-menu -->

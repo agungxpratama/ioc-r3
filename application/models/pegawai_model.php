@@ -1,7 +1,7 @@
-<?php
-
-class pegawai_model extends CI_Model
+<?php 
+class Pegawai_model extends CI_Model
 {
+	
 	public function view($table)
 	{
 		return $this->db->get($table);
