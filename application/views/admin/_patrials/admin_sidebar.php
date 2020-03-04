@@ -88,13 +88,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo site_url('index.php/admin/admin_input_presensi/') ?>" class="nav-link">
+                <a href="<?php echo site_url('index.php/presensi/admin_input_presensi/') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Input Presensi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('index.php/admin/admin_lihat_kehadiran/') ?>" class="nav-link">
+                <a href="<?php echo site_url('index.php/presensi/admin_lihat_kehadiran/') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat Kehadiran</p>
                 </a>
@@ -109,7 +109,7 @@
           </li>
           <!-- inputan menu -->
           <?php  
-          if($this->session->userdata('id_tim') > 0 && $this->session->userdata('status_anggota')=='Ketua Tim'){
+          if($this->session->userdata('status_anggota')=='Ketua Tim'){
           ?>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -121,13 +121,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo site_url('index.php/admin/admin_input_presensi/') ?>" class="nav-link">
+                <a href="<?php echo site_url('index.php/presensi/admin_input_presensi/') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Input Tim</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('index.php/admin/admin_lihat_kehadiran/') ?>" class="nav-link">
+                <a href="<?php echo site_url('index.php/presensi/admin_lihat_kehadiran/') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lihat Daftar Tim</p>
                 </a>

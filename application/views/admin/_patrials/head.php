@@ -27,3 +27,4 @@
   <link rel="stylesheet" href="<?php echo base_url('plugins/fullcalendar-daygrid/main.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('plugins/fullcalendar-timegrid/main.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('plugins/fullcalendar-bootstrap/main.min.css') ?>">
+  

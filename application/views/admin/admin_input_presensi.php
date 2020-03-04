@@ -2,6 +2,9 @@
 <html>
 <head>
    <?php $this->load->view("admin/_patrials/head.php") ?>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -38,28 +41,52 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
+        <script type='text/javascript'>
+          if (<?=$this->session->flashdata('ale')?> != null) {
+            document.write("<div class='alert alert-primary' role='alert'>Belum waktunya update presensi!</div>");
+          }
+          //alert(<?=$this->session->flashdata('ale')?>);</script>
+        <h5>Presensi Hari Ini!</h5>
         <div class="row">
           
+          <?php if ($presensi_today != null) { ?>
           <table class="table">
             <tr>
-              <th>Tanggal</th>
-              <th>Masuk</th>
-              <th>Update</th>
-              <th>Pulang</th>
+                <th>Tanggal</th>
+                <th>Masuk</th>
+                <th>Update</th>
+                <th>Pulang</th>
+                <th>Keterangan</th>
             </tr>
+            <?php foreach ($presensi_today as $key){ ?>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+                <td><?=$key->tanggal_presensi;?></td>
+                <td><?=$key->jam_masuk_presensi;?></td>
+                <td>
+          <?php if ($key->jam_tengah == '00:00:00') {?>
+                  <a href="<?=base_url('index.php/presensi/jam_update/'.$key->jam_masuk_presensi.'/'.$key->id_presensi)?>" class="btn btn-primary" role="button" >Update</a>    
+          <?php }else{
+                    echo $key->jam_tengah;
+                }?>
+                </td>
+                <td>
+          <?php if ($key->jam_keluar_presensi == '00:00:00') {?>
+                  <a href="<?=base_url('index.php/presensi/jam_pulang/'.$key->jam_masuk_presensi.'/'.$key->id_presensi)?>" class="btn btn-primary" role="button" >Update</a>    
+          <?php }else{
+                    echo $key->jam_keluar_presensi;
+                }?>    
+                </td>
+                <td><?=$key->keterangan_presensi?></td>
             </tr>
+          <?php } ?>
           </table>
 
           <!-- ./col -->
-        </div>
+        
+        <?php }  else{?>
         <!-- /.row -->
         <!-- Main row -->
-        <div class="row">
+       
           <div class="col-md">
             <!-- general form elements -->
             <div class="card card-primary">
@@ -108,6 +135,7 @@
             <!-- /.card -->
           </div>
         </div>
+        <?php } ?>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>
